@@ -1,0 +1,42 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+  <section class="dashboard container" aria-labelledby="dashboard-heading">
+    <div class="page-head">
+      <h2 id="dashboard-heading">Dashboard</h2>
+      <div class="actions">
+        <button id="logout-btn" class="btn btn-ghost">Logout</button>
+      </div>
+    </div>
+
+    <div class="grid grid-3 stats" id="stats-root" aria-live="polite">
+      <div class="card stat-card">
+        <h3>Total Tickets</h3>
+        <p class="stat-value" id="stat-total">0</p>
+      </div>
+      <div class="card stat-card">
+        <h3>Open</h3>
+        <p class="stat-value" id="stat-open">0</p>
+      </div>
+      <div class="card stat-card">
+        <h3>Resolved</h3>
+        <p class="stat-value" id="stat-closed">0</p>
+      </div>
+    </div>
+
+    <div class="card shortcuts">
+      <h3>Quick Links</h3>
+      <p><a href="/tickets" class="btn btn-primary">Manage Tickets</a></p>
+    </div>
+  </section>
+
+  {% block scripts %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      App.ensureAuthenticatedRedirect();
+      App.renderStats();
+      document.getElementById('logout-btn').addEventListener('click', function () { App.logout(); });
+    });
+  </script>
+  {% endblock %}
+{% endblock %}

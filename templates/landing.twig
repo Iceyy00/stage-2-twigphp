@@ -1,0 +1,49 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+  <section class="hero">
+    <div class="hero-wave" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1 class="hero-title">DomTicket</h1>
+        <p class="lead">Manage tickets simply and beautifully. Track issues, prioritize work, and close the loop.</p>
+        <p>
+          <a class="btn btn-primary" href="/auth/login">Login</a>
+          <a class="btn btn-ghost" href="/auth/signup">Get Started</a>
+        </p>
+      </div>
+
+      <div class="hero-cards" aria-hidden="false">
+        <div class="card feature-card">
+          <h3>Organize</h3>
+          <p>Cards and tags for every ticket.</p>
+        </div>
+        <div class="card feature-card">
+          <h3>Track</h3>
+          <p>Live status views and quick filtering.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="decorative-circle circle-1" aria-hidden="true"></div>
+    <div class="decorative-circle circle-2" aria-hidden="true"></div>
+  </section>
+
+  <section class="features container">
+    <h2>Features</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <h4>Responsive layout</h4>
+        <p>Works across mobile, tablet and desktop.</p>
+      </div>
+      <div class="card">
+        <h4>Simple auth</h4>
+        <p>Simulated auth with localStorage and session tokens.</p>
+      </div>
+      <div class="card">
+        <h4>Full CRUD</h4>
+        <p>Create, view, edit and delete tickets with validation.</p>
+      </div>
+    </div>
+  </section>
+{% endblock %}
